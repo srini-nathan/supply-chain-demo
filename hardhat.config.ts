@@ -38,7 +38,9 @@ if (!process.env.INFURA_API_KEY) {
 
 function createTestnetConfig(network: keyof typeof chainIds): NetworkUserConfig {
   const url: string = "https://" + network + ".infura.io/v3/" + infuraApiKey;
-  if (network === "ganache") {const url:string = "http://127.0.0.1:8546"}
+  if (network === "ganache") {
+    const url: string = "http://127.0.0.1:8546";
+  }
   return {
     accounts: {
       count: 10,
@@ -65,7 +67,6 @@ const config: HardhatUserConfig = {
     rinkeby: createTestnetConfig("rinkeby"),
     ropsten: createTestnetConfig("ropsten"),
     ganache: createTestnetConfig("ganache"),
-  
   },
   paths: {
     artifacts: "./artifacts",
@@ -74,7 +75,7 @@ const config: HardhatUserConfig = {
     tests: "./test",
   },
   solidity: {
-    version: "0.7.6",
+    version: "0.7.0",
     settings: {
       // https://hardhat.org/hardhat-network/#solidity-optimizer-support
       optimizer: {

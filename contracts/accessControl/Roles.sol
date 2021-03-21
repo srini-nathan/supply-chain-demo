@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity >=0.6.0 <0.8.0;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -163,12 +163,7 @@ contract Roles is Ownable, AccessControl {
      * @notice Checks if the address is assigned the whitelister role.
      * @param _address Address for checking.
      */
-    function isWhitelister(address _address)
-        public
-        view
-        virtual
-        returns (bool)
-    {
+    function isWhitelister(address _address) public view virtual returns (bool) {
         return hasRole(WHITELISTER_ROLE, _address);
     }
 
@@ -184,12 +179,7 @@ contract Roles is Ownable, AccessControl {
      * @notice Checks if the address is assigned the transporter role.
      * @param _address Address for checking.
      */
-    function isTransporter(address _address)
-        public
-        view
-        virtual
-        returns (bool)
-    {
+    function isTransporter(address _address) public view virtual returns (bool) {
         return hasRole(TRANSPORTER_ROLE, _address);
     }
 

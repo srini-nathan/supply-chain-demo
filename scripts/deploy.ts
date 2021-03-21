@@ -13,7 +13,10 @@ async function main(): Promise<void> {
 
   // We get the contract to deploy
   const ProductProvenanceFactory: ContractFactory = await ethers.getContractFactory("ProductProvenanceFactory");
-  const productProvenanceFactory: Contract = await ProductProvenanceFactory.deploy("b1629ecd-4f01-40a3-b3a8-be4bfec25507", "Medical");
+  const productProvenanceFactory: Contract = await ProductProvenanceFactory.deploy(
+    "b1629ecd-4f01-40a3-b3a8-be4bfec25507",
+    "Medical",
+  );
   await productProvenanceFactory.deployed();
 
   console.log("ProductProvenanceFactory deployed to: ", productProvenanceFactory.address);
